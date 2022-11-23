@@ -520,7 +520,7 @@ class _MasRecetasWidgetState extends State<MasRecetasWidget> {
                     onPressed: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const InicioWidget())); // use the Navigator, not the BuildContext
+                          MaterialPageRoute(builder: (context) => const PerfilWidget())); // use the Navigator, not the BuildContext
                     },
                     text: 'Guardar receta',
                     options: FFButtonOptions(
