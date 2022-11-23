@@ -1,7 +1,10 @@
+import 'package:proyectofinal/IniciarSesion2.dart';
+import 'package:proyectofinal/MasRecetas.dart';
 import 'package:proyectofinal/flutter_flow_theme.dart';
-import 'package:proyectofinal/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:proyectofinal/Receta.dart';
+import 'package:proyectofinal/MasRecetas.dart';
+import 'package:proyectofinal/Perfil.dart';
 
 class InicioWidget extends StatefulWidget {
   const InicioWidget({Key? key}) : super(key: key);
@@ -93,6 +96,11 @@ class _InicioWidgetState extends State<InicioWidget> {
                     scrollDirection: Axis.vertical,
                     children: [
                       ListTile(
+                        onTap: (){
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const InicioWidget())); // use the Navigator, not the BuildContext
+                        },
                         leading: Icon(
                           Icons.home_rounded,
                           color: Colors.black,
@@ -108,6 +116,11 @@ class _InicioWidgetState extends State<InicioWidget> {
                         dense: false,
                       ),
                       ListTile(
+                        onTap: (){
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const PerfilWidget())); // use the Navigator, not the BuildContext
+                        },
                         leading: Icon(
                           Icons.person,
                           color: Colors.black,
@@ -123,6 +136,11 @@ class _InicioWidgetState extends State<InicioWidget> {
                         dense: false,
                       ),
                       ListTile(
+                        onTap: (){
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const MasRecetasWidget())); // use the Navigator, not the BuildContext
+                        },
                         leading: Icon(
                           Icons.receipt_long_sharp,
                           color: Colors.black,
@@ -138,6 +156,11 @@ class _InicioWidgetState extends State<InicioWidget> {
                         dense: false,
                       ),
                       ListTile(
+                        onTap: (){
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const IniciarSesion2Widget())); // use the Navigator, not the BuildContext
+                        },
                         leading: Icon(
                           Icons.login_sharp,
                           color: Colors.black,
@@ -193,17 +216,19 @@ class _InicioWidgetState extends State<InicioWidget> {
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Container(
-                    width: 400,
-                    height: 300,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                    ),
-                    child: Image.network(
-                      'https://www.clara.es/medio/2021/12/16/que-comer-hoy-ideas_21beeb02_1200x630.jpg',
-                      width: 100,
-                      height: 100,
-                      fit: BoxFit.cover,
+                  Expanded(
+                    child: Container(
+                      width: 400,
+                      height: 300,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                      ),
+                      child: Image.network(
+                        'https://www.clara.es/medio/2021/12/16/que-comer-hoy-ideas_21beeb02_1200x630.jpg',
+                        width: 100,
+                        height: 100,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ],
@@ -232,15 +257,10 @@ class _InicioWidgetState extends State<InicioWidget> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     InkWell(
-                      onTap: () async {
-                        final navigator = Navigator.of(context); // store the Navigator
-                        await showDialog(
-                          context: context,
-                          builder: (_) => AlertDialog(
-                            title: Text('Receta'),
-                          ),
-                        );
-                        navigator.pop('Receta'); // use the Navigator, not the BuildContext
+                      onTap: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const RecetaWidget())); // use the Navigator, not the BuildContext
                       },
                       child: Container(
                         width: 190,
@@ -257,11 +277,13 @@ class _InicioWidgetState extends State<InicioWidget> {
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Image.network(
-                                    'https://www.mexicoenmicocina.com/wp-content/uploads/2013/11/Enchiladas-rojas-2.jpg',
-                                    width: 190,
-                                    height: 170,
-                                    fit: BoxFit.cover,
+                                  Expanded(
+                                    child: Image.network(
+                                      'https://www.mexicoenmicocina.com/wp-content/uploads/2013/11/Enchiladas-rojas-2.jpg',
+                                      width: 190,
+                                      height: 170,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -332,15 +354,10 @@ class _InicioWidgetState extends State<InicioWidget> {
                       ),
                     ),
                     InkWell(
-                      onTap: () async {
-                        final navigator = Navigator.of(context); // store the Navigator
-                        await showDialog(
-                          context: context,
-                          builder: (_) => AlertDialog(
-                            title: Text('Receta'),
-                          ),
-                        );
-                        navigator.pop('Receta'); // use the Navigator, not the BuildContext
+                      onTap: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const RecetaWidget())); // use the Navigator, not the BuildContext
                       },
                       child: Container(
                         width: 190,
@@ -357,11 +374,13 @@ class _InicioWidgetState extends State<InicioWidget> {
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Image.network(
-                                    'https://www.saborusa.com/wp-content/uploads/2019/10/Animate-a-disfrutar-una-deliciosa-pizza-de-salchicha-Foto-destacada.png',
-                                    width: 190,
-                                    height: 170,
-                                    fit: BoxFit.cover,
+                                  Expanded(
+                                    child: Image.network(
+                                      'https://www.saborusa.com/wp-content/uploads/2019/10/Animate-a-disfrutar-una-deliciosa-pizza-de-salchicha-Foto-destacada.png',
+                                      width: 190,
+                                      height: 170,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -432,15 +451,10 @@ class _InicioWidgetState extends State<InicioWidget> {
                       ),
                     ),
                     InkWell(
-                      onTap: () async {
-                        final navigator = Navigator.of(context); // store the Navigator
-                        await showDialog(
-                          context: context,
-                          builder: (_) => AlertDialog(
-                            title: Text('Receta'),
-                          ),
-                        );
-                        navigator.pop('Receta'); // use the Navigator, not the BuildContext
+                      onTap: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const RecetaWidget())); // use the Navigator, not the BuildContext
                       },
                       child: Container(
                         width: 190,
@@ -457,11 +471,13 @@ class _InicioWidgetState extends State<InicioWidget> {
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Image.network(
-                                    'https://www.cocinacaserayfacil.net/wp-content/uploads/2020/04/Recetas-de-comidas-para-ni%C3%B1os.jpg',
-                                    width: 190,
-                                    height: 170,
-                                    fit: BoxFit.cover,
+                                  Expanded(
+                                    child: Image.network(
+                                      'https://www.cocinacaserayfacil.net/wp-content/uploads/2020/04/Recetas-de-comidas-para-ni%C3%B1os.jpg',
+                                      width: 190,
+                                      height: 170,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -532,15 +548,10 @@ class _InicioWidgetState extends State<InicioWidget> {
                       ),
                     ),
                     InkWell(
-                      onTap: () async {
-                        final navigator = Navigator.of(context); // store the Navigator
-                        await showDialog(
-                          context: context,
-                          builder: (_) => AlertDialog(
-                            title: Text('Receta'),
-                          ),
-                        );
-                        navigator.pop('Receta'); // use the Navigator, not the BuildContext
+                      onTap: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const RecetaWidget())); // use the Navigator, not the BuildContext
                       },
                       child: Container(
                         width: 190,
@@ -557,11 +568,13 @@ class _InicioWidgetState extends State<InicioWidget> {
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Image.network(
-                                    'https://images.ctfassets.net/n7hs0hadu6ro/2kXdxxIdkuOGj872zosdw8/d5bb142e2182bebfcfc1d5dd1afd8c2a/comida-tipica-de-puebla-una-aventura-de-sabor.jpg?w=1257&h=835&fl=progressive&q=50&fm=jpg',
-                                    width: 190,
-                                    height: 170,
-                                    fit: BoxFit.cover,
+                                  Expanded(
+                                    child: Image.network(
+                                      'https://images.ctfassets.net/n7hs0hadu6ro/2kXdxxIdkuOGj872zosdw8/d5bb142e2182bebfcfc1d5dd1afd8c2a/comida-tipica-de-puebla-una-aventura-de-sabor.jpg?w=1257&h=835&fl=progressive&q=50&fm=jpg',
+                                      width: 190,
+                                      height: 170,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -656,15 +669,10 @@ class _InicioWidgetState extends State<InicioWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     InkWell(
-                      onTap: () async {
-                        final navigator = Navigator.of(context); // store the Navigator
-                        await showDialog(
-                          context: context,
-                          builder: (_) => AlertDialog(
-                            title: Text('Receta'),
-                          ),
-                        );
-                        navigator.pop('Receta'); // use the Navigator, not the BuildContext
+                      onTap: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const RecetaWidget())); // use the Navigator, not the BuildContext
                       },
                       child: Container(
                         width: 190,
@@ -681,11 +689,13 @@ class _InicioWidgetState extends State<InicioWidget> {
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Image.network(
-                                    'https://cnnespanol.cnn.com/wp-content/uploads/2015/06/150611062152-pizza-hut.jpg?quality=100&strip=info&w=460&h=260&crop=1',
-                                    width: 190,
-                                    height: 170,
-                                    fit: BoxFit.cover,
+                                  Expanded(
+                                    child: Image.network(
+                                      'https://cnnespanol.cnn.com/wp-content/uploads/2015/06/150611062152-pizza-hut.jpg?quality=100&strip=info&w=460&h=260&crop=1',
+                                      width: 190,
+                                      height: 170,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -756,15 +766,10 @@ class _InicioWidgetState extends State<InicioWidget> {
                       ),
                     ),
                     InkWell(
-                      onTap: () async {
-                        final navigator = Navigator.of(context); // store the Navigator
-                        await showDialog(
-                          context: context,
-                          builder: (_) => AlertDialog(
-                            title: Text('Receta'),
-                          ),
-                        );
-                        navigator.pop('Receta'); // use the Navigator, not the BuildContext
+                      onTap: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const RecetaWidget())); // use the Navigator, not the BuildContext
                       },
                       child: Container(
                         width: 190,
@@ -781,11 +786,13 @@ class _InicioWidgetState extends State<InicioWidget> {
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Image.network(
-                                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxm_IZ97KW0L74eMxnLQd_BjZKANwYfNvtqQ&usqp=CAU',
-                                    width: 190,
-                                    height: 170,
-                                    fit: BoxFit.cover,
+                                  Expanded(
+                                    child: Image.network(
+                                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxm_IZ97KW0L74eMxnLQd_BjZKANwYfNvtqQ&usqp=CAU',
+                                      width: 190,
+                                      height: 170,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -856,15 +863,10 @@ class _InicioWidgetState extends State<InicioWidget> {
                       ),
                     ),
                     InkWell(
-                      onTap: () async {
-                        final navigator = Navigator.of(context); // store the Navigator
-                        await showDialog(
-                          context: context,
-                          builder: (_) => AlertDialog(
-                            title: Text('Receta'),
-                          ),
-                        );
-                        navigator.pop('Receta'); // use the Navigator, not the BuildContext
+                      onTap: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const RecetaWidget())); // use the Navigator, not the BuildContext
                       },
                       child: Container(
                         width: 190,
@@ -881,11 +883,13 @@ class _InicioWidgetState extends State<InicioWidget> {
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Image.network(
-                                    'https://www.cardamomo.news/__export/1649105595001/sites/debate/img/2021/03/29/14_recetas_fxciles_y_econxmicas_que_puedes_hacer_para_la_comida_crop1617051957684.jpeg_1187729725.jpeg',
-                                    width: 190,
-                                    height: 170,
-                                    fit: BoxFit.cover,
+                                  Expanded(
+                                    child: Image.network(
+                                      'https://www.cardamomo.news/__export/1649105595001/sites/debate/img/2021/03/29/14_recetas_fxciles_y_econxmicas_que_puedes_hacer_para_la_comida_crop1617051957684.jpeg_1187729725.jpeg',
+                                      width: 190,
+                                      height: 170,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -956,15 +960,10 @@ class _InicioWidgetState extends State<InicioWidget> {
                       ),
                     ),
                     InkWell(
-                      onTap: () async {
-                        final navigator = Navigator.of(context); // store the Navigator
-                        await showDialog(
-                          context: context,
-                          builder: (_) => AlertDialog(
-                            title: Text('Receta'),
-                          ),
-                        );
-                        navigator.pop('Receta'); // use the Navigator, not the BuildContext
+                      onTap: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const RecetaWidget())); // use the Navigator, not the BuildContext
                       },
                       child: Container(
                         width: 190,
@@ -981,11 +980,13 @@ class _InicioWidgetState extends State<InicioWidget> {
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Image.network(
-                                    'https://saposyprincesas.elmundo.es/wp-content/uploads/2017/01/comida-india-langostinos-tandoori.jpg',
-                                    width: 190,
-                                    height: 170,
-                                    fit: BoxFit.cover,
+                                  Expanded(
+                                    child: Image.network(
+                                      'https://saposyprincesas.elmundo.es/wp-content/uploads/2017/01/comida-india-langostinos-tandoori.jpg',
+                                      width: 190,
+                                      height: 170,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -1080,15 +1081,10 @@ class _InicioWidgetState extends State<InicioWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     InkWell(
-                      onTap: () async {
-                        final navigator = Navigator.of(context); // store the Navigator
-                        await showDialog(
-                          context: context,
-                          builder: (_) => AlertDialog(
-                            title: Text('Receta'),
-                          ),
-                        );
-                        navigator.pop('Receta'); // use the Navigator, not the BuildContext
+                      onTap: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const RecetaWidget())); // use the Navigator, not the BuildContext
                       },
                       child: Container(
                         width: 190,
@@ -1105,11 +1101,13 @@ class _InicioWidgetState extends State<InicioWidget> {
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Image.network(
-                                    'https://www.cardamomo.news/__export/1651944484203/sites/debate/img/2022/05/07/comida_corrida.png_242310155.png',
-                                    width: 190,
-                                    height: 170,
-                                    fit: BoxFit.cover,
+                                  Expanded(
+                                    child: Image.network(
+                                      'https://www.cardamomo.news/__export/1651944484203/sites/debate/img/2022/05/07/comida_corrida.png_242310155.png',
+                                      width: 190,
+                                      height: 170,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -1180,15 +1178,10 @@ class _InicioWidgetState extends State<InicioWidget> {
                       ),
                     ),
                     InkWell(
-                      onTap: () async {
-                        final navigator = Navigator.of(context); // store the Navigator
-                        await showDialog(
-                          context: context,
-                          builder: (_) => AlertDialog(
-                            title: Text('Receta'),
-                          ),
-                        );
-                        navigator.pop('Receta'); // use the Navigator, not the BuildContext
+                      onTap: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const RecetaWidget())); // use the Navigator, not the BuildContext
                       },
                       child: Container(
                         width: 190,
@@ -1205,11 +1198,13 @@ class _InicioWidgetState extends State<InicioWidget> {
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Image.network(
-                                    'https://statics-cuidateplus.marca.com/cms/styles/ratio_16_9/azblob/hamburguesas.jpg.webp?itok=kFNL-5BX',
-                                    width: 190,
-                                    height: 170,
-                                    fit: BoxFit.cover,
+                                  Expanded(
+                                    child: Image.network(
+                                      'https://statics-cuidateplus.marca.com/cms/styles/ratio_16_9/azblob/hamburguesas.jpg.webp?itok=kFNL-5BX',
+                                      width: 190,
+                                      height: 170,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -1280,15 +1275,10 @@ class _InicioWidgetState extends State<InicioWidget> {
                       ),
                     ),
                     InkWell(
-                      onTap: () async {
-                        final navigator = Navigator.of(context); // store the Navigator
-                        await showDialog(
-                          context: context,
-                          builder: (_) => AlertDialog(
-                            title: Text('Receta'),
-                          ),
-                        );
-                        navigator.pop('Receta'); // use the Navigator, not the BuildContext
+                      onTap: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const RecetaWidget())); // use the Navigator, not the BuildContext
                       },
                       child: Container(
                         width: 190,
@@ -1305,11 +1295,13 @@ class _InicioWidgetState extends State<InicioWidget> {
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Image.network(
-                                    'https://www.soynomada.news/__export/1612172574379/sites/debate/img/2021/02/01/comida_txpica_de_guadalajara__torta_ahogada_crop1612172540940.jpeg_1902800913.jpeg',
-                                    width: 190,
-                                    height: 170,
-                                    fit: BoxFit.cover,
+                                  Expanded(
+                                    child: Image.network(
+                                      'https://www.soynomada.news/__export/1612172574379/sites/debate/img/2021/02/01/comida_txpica_de_guadalajara__torta_ahogada_crop1612172540940.jpeg_1902800913.jpeg',
+                                      width: 190,
+                                      height: 170,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -1380,15 +1372,10 @@ class _InicioWidgetState extends State<InicioWidget> {
                       ),
                     ),
                     InkWell(
-                      onTap: () async {
-                        final navigator = Navigator.of(context); // store the Navigator
-                        await showDialog(
-                          context: context,
-                          builder: (_) => AlertDialog(
-                            title: Text('Receta'),
-                          ),
-                        );
-                        navigator.pop('Receta'); // use the Navigator, not the BuildContext
+                      onTap: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const RecetaWidget())); // use the Navigator, not the BuildContext
                       },
                       child: Container(
                         width: 190,
@@ -1405,11 +1392,13 @@ class _InicioWidgetState extends State<InicioWidget> {
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Image.network(
-                                    'https://media.gq.com.mx/photos/5fd14d41df344f5681dd7813/16:9/w_2560%2Cc_limit/GettyImages-1255074395.jpg',
-                                    width: 190,
-                                    height: 170,
-                                    fit: BoxFit.cover,
+                                  Expanded(
+                                    child: Image.network(
+                                      'https://media.gq.com.mx/photos/5fd14d41df344f5681dd7813/16:9/w_2560%2Cc_limit/GettyImages-1255074395.jpg',
+                                      width: 190,
+                                      height: 170,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -1484,7 +1473,7 @@ class _InicioWidgetState extends State<InicioWidget> {
               ),
               Container(
                 width: double.infinity,
-                height: 20,
+                height: 30,
                 decoration: BoxDecoration(
                   color: Color(0xFFFFBC54),
                 ),

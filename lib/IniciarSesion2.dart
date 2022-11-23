@@ -1,8 +1,8 @@
+import 'package:proyectofinal/Registrarse.dart';
+import 'package:proyectofinal/Inicio.dart';
 import 'package:proyectofinal/flutter_flow_theme.dart';
-import 'package:proyectofinal/flutter_flow_util.dart';
 import 'package:proyectofinal/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/src/painting/border_radius.dart';
 
 class IniciarSesion2Widget extends StatefulWidget {
@@ -329,8 +329,10 @@ class _IniciarSesion2WidgetState extends State<IniciarSesion2Widget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
               child: FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
+                onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const InicioWidget())); // use the Navigator, not the BuildContext
                 },
                 text: 'Iniciar Sesión',
                 options: FFButtonOptions(
@@ -352,8 +354,10 @@ class _IniciarSesion2WidgetState extends State<IniciarSesion2Widget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
               child: FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
+                onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const RegistrarseWidget())); // use the Navigator, not the BuildContext
                 },
                 text: 'Registrarse',
                 options: FFButtonOptions(

@@ -1,9 +1,10 @@
 import 'package:proyectofinal/flutter_flow_theme.dart';
-import 'package:proyectofinal/flutter_flow_util.dart';
 import 'package:proyectofinal/flutter_flow_widgets.dart';
+import 'package:proyectofinal/IniciarSesion2.dart';
+import 'package:proyectofinal/Registrarse.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 
 class InicioSesionWidget extends StatefulWidget {
   const InicioSesionWidget({Key? key}) : super(key: key);
@@ -149,17 +150,12 @@ class _InicioSesionWidgetState extends State<InicioSesionWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 300, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 200, 0, 0),
                   child: FFButtonWidget(
-                    onPressed: () async {
-                      final navigator = Navigator.of(context); // store the Navigator
-                      await showDialog(
-                        context: context,
-                        builder: (_) => AlertDialog(
-                          title: Text('IniciarSesion2'),
-                        ),
-                      );
-                      navigator.pop('IniciarSesion2'); // use the Navigator, not the BuildContext
+                    onPressed: (){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const IniciarSesion2Widget())); // use the Navigator, not the BuildContext
                     },
                     text: 'Ya tengo una cuenta',
                     options: FFButtonOptions(
@@ -182,15 +178,10 @@ class _InicioSesionWidgetState extends State<InicioSesionWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                   child: FFButtonWidget(
-                    onPressed: () async {
-                      final navigator = Navigator.of(context); // store the Navigator
-                      await showDialog(
-                        context: context,
-                        builder: (_) => AlertDialog(
-                          title: Text('Receta'),
-                        ),
-                      );
-                      navigator.pop('Receta'); // use the Navigator, not the BuildContext
+                    onPressed: (){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const RegistrarseWidget())); // use the Navigator, not the BuildContext
                     },
                     text: 'Registrarse',
                     options: FFButtonOptions(

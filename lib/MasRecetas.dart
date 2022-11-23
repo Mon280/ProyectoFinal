@@ -1,9 +1,12 @@
+import 'package:proyectofinal/IniciarSesion2.dart';
 import 'package:proyectofinal/flutter_flow_theme.dart';
-import 'package:proyectofinal/flutter_flow_util.dart';
 import 'package:proyectofinal/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:proyectofinal/Inicio.dart';
+import 'package:proyectofinal/Perfil.dart';
+
+
 
 class MasRecetasWidget extends StatefulWidget {
   const MasRecetasWidget({Key? key}) : super(key: key);
@@ -112,6 +115,11 @@ class _MasRecetasWidgetState extends State<MasRecetasWidget> {
                     scrollDirection: Axis.vertical,
                     children: [
                       ListTile(
+                        onTap: (){
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const InicioWidget())); // use the Navigator, not the BuildContext
+                        },
                         leading: Icon(
                           Icons.home_rounded,
                           color: Colors.black,
@@ -127,6 +135,11 @@ class _MasRecetasWidgetState extends State<MasRecetasWidget> {
                         dense: false,
                       ),
                       ListTile(
+                        onTap: (){
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const PerfilWidget())); // use the Navigator, not the BuildContext
+                        },
                         leading: Icon(
                           Icons.person,
                           color: Colors.black,
@@ -142,6 +155,11 @@ class _MasRecetasWidgetState extends State<MasRecetasWidget> {
                         dense: false,
                       ),
                       ListTile(
+                        onTap: (){
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const MasRecetasWidget())); // use the Navigator, not the BuildContext
+                        },
                         leading: Icon(
                           Icons.receipt_long_sharp,
                           color: Colors.black,
@@ -157,6 +175,11 @@ class _MasRecetasWidgetState extends State<MasRecetasWidget> {
                         dense: false,
                       ),
                       ListTile(
+                        onTap: (){
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const IniciarSesion2Widget())); // use the Navigator, not the BuildContext
+                        },
                         leading: Icon(
                           Icons.login,
                           color: Colors.black,
@@ -494,8 +517,10 @@ class _MasRecetasWidgetState extends State<MasRecetasWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(15, 20, 15, 0),
                   child: FFButtonWidget(
-                    onPressed: () {
-                      print('Button pressed ...');
+                    onPressed: (){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const InicioWidget())); // use the Navigator, not the BuildContext
                     },
                     text: 'Guardar receta',
                     options: FFButtonOptions(
