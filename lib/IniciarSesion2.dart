@@ -1,5 +1,8 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:proyectofinal/Registrarse.dart';
 import 'package:proyectofinal/Inicio.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:proyectofinal/flutter_flow_theme.dart';
 import 'package:proyectofinal/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
@@ -13,8 +16,11 @@ class IniciarSesion2Widget extends StatefulWidget {
 }
 
 class _IniciarSesion2WidgetState extends State<IniciarSesion2Widget> {
-  TextEditingController? emailAddressController;
-  TextEditingController? passwordLoginController;
+  //TextEditingController? emailAddressController;
+  //TextEditingController? passwordLoginController;
+
+  final emailAddressController = TextEditingController();
+  final passwordLoginController = TextEditingController();
 
   late bool passwordLoginVisibility;
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -22,15 +28,15 @@ class _IniciarSesion2WidgetState extends State<IniciarSesion2Widget> {
   @override
   void initState() {
     super.initState();
-    emailAddressController = TextEditingController();
-    passwordLoginController = TextEditingController();
+    //emailAddressController = TextEditingController();
+    //passwordLoginController = TextEditingController();
     passwordLoginVisibility = false;
   }
 
   @override
   void dispose() {
-    emailAddressController?.dispose();
-    passwordLoginController?.dispose();
+    emailAddressController.dispose();
+    passwordLoginController.dispose();
     super.dispose();
   }
 
@@ -329,11 +335,11 @@ class _IniciarSesion2WidgetState extends State<IniciarSesion2Widget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
               child: FFButtonWidget(
-                onPressed: (){
-                  Navigator.push(
+                onPressed: signIn,
+                  /*Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const InicioWidget())); // use the Navigator, not the BuildContext
-                },
+                      MaterialPageRoute(builder: (context) => const InicioWidget())
+                  );*/ // use the Navigator, not the BuildContext
                 text: 'Iniciar Sesión',
                 options: FFButtonOptions(
                   width: double.infinity,
@@ -379,6 +385,13 @@ class _IniciarSesion2WidgetState extends State<IniciarSesion2Widget> {
           ],
         ),
       ),
+    );
+  }
+
+  Future signIn() async{
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: emailAddressController.text.trim(),
+      password: passwordLoginController.text.trim(),
     );
   }
 }
